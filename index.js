@@ -8,10 +8,10 @@ import keyMatcher from './lib/keyMatcher'
 
 export default {
 	time,
-  cookie,
-  url,
-  validator,
-  toFinancialNum,
-  autoTextarea,
-  keyMatcher,
+	cookie,
+	url,
+	validator,
+	toFinancialNum,
+	autoTextarea,
+	keyMatcher,
 }
