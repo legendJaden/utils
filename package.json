@@ -10,5 +10,8 @@
     "apec-fe-utils"
   ],
   "author": "wbz",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "user": "0.0.0"
+  }
 }

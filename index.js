@@ -6,7 +6,7 @@ import toFinancialNum from './lib/toFinancialNum'
 import autoTextarea from './lib/autoTextarea'
 import keyMatcher from './lib/keyMatcher'
 
-export default {
+export {
 	time,
 	cookie,
 	url,
@@ -14,4 +14,4 @@ export default {
 	toFinancialNum,
 	autoTextarea,
 	keyMatcher,
-}
+};
