@@ -5,6 +5,7 @@ import validator from './lib/validator'
 import toFinancialNum from './lib/toFinancialNum'
 import autoTextarea from './lib/autoTextarea'
 import keyMatcher from './lib/keyMatcher'
+import https from './lib/https'
 
 export {
 	time,
@@ -14,4 +15,5 @@ export {
 	toFinancialNum,
 	autoTextarea,
 	keyMatcher,
+	https,
 };
