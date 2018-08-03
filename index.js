@@ -1,11 +1,11 @@
-import time from './lib/time'
-import cookie from './lib/cookie'
-import url from './lib/url'
-import validator from './lib/validator'
-import toFinancialNum from './lib/toFinancialNum'
-import autoTextarea from './lib/autoTextarea'
-import keyMatcher from './lib/keyMatcher'
-import https from './lib/https'
+import time from './dist/time'
+import cookie from './dist/cookie'
+import url from './dist/url'
+import validator from './dist/validator'
+import toFinancialNum from './dist/toFinancialNum'
+import autoTextarea from './dist/autoTextarea'
+import keyMatcher from './dist/keyMatcher'
+import https from './dist/https'
 
 export {
 	time,
