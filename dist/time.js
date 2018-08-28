@@ -120,7 +120,7 @@ exports.default = {
    * @param {String} timesData 时间字符串
    * @return {String}          字符串
    */
-  settleDate: function settleDate(timesData) {
+  getPassDateString: function getPassDateString(timesData) {
     const self = this
     if (!timesData) {
       return timesData
