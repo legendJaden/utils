@@ -10,6 +10,10 @@ Object.defineProperty(exports, "__esModule", {
  * @param {Array} list 匹配枚举对象数组
  * @param {String} key = 'key' 对应输入键的字段名
  * @param {String} name = 'name' 对应输出文字的字段名
+ * @return {Object} result = {
+ *   name,
+ *   info: {},
+ * }
  * */
 exports.default = function (val, list) {
   var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'key';

@@ -73,3 +73,16 @@ var Https = function () {
 var https = new Https();
 
 exports.default = https;
+
+/**
+ * 主要用法:
+ * https.post(url, param, configs).then(res => {}).catch(err => {})
+ * https.get(url, param, configs).then(res => {}).catch(err => {})
+ *
+ * @param {String} url 请求地址
+ * @param {Object} param 请求参数, 直接使用对象即可, 封装方法已帮助JSON.stringify
+ * @param {Object} configs 额外配置, 支持axios的所有配置项, 详见axios文档: https://github.com/axios/axios/blob/master/README.md#request-config
+ * @return {Promise} 返回Promise链, 用户需自行.then(res => {}).catch(err => {})
+ *
+ * 备注: 直接then的res为请求响应对象, 后续then需用户自行return res
+ * */
