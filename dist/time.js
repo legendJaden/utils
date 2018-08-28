@@ -115,6 +115,16 @@ exports.default = {
     return date;
   },
   /**
+   * 截取日期到年月日
+   * @param {String} str 时间字符串
+   * @return {String}          字符串
+   */
+  substringDate: function substringDate(str) {
+    if (str) {
+      return str.substring(0, 10);
+    }
+  },
+  /**
    * 通过 时间字符串 返回这个时间距离当前时间过了多久了
    * eg: 2018-08-28 19:00:00 -> 'xx分钟前'/'xx小时前'/'刚刚'
    * @param {String} timesData 时间字符串
