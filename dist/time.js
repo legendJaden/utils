@@ -113,5 +113,44 @@ exports.default = {
     date.ss = self.add0(Math.floor(timeRemain % (60 * 1000) / 1000));
     date.timeout = false;
     return date;
+  },
+  /**
+   * 通过 时间字符串 返回这个时间距离当前时间过了多久了
+   * eg: 2018-08-28 19:00:00 -> 'xx分钟前'/'xx小时前'/'刚刚'
+   * @param {String} timesData 时间字符串
+   * @return {String}          字符串
+   */
+  settleDate: function settleDate(timesData) {
+    const self = this
+    if (!timesData) {
+      return timesData
+    }
+    //如果时间格式是正确的，那下面这一步转化时间格式就可以不用了
+    var dateBegin = new Date(timesData.replace(/-/g, "/")); //将-转化为/，使用new Date
+    var dateEnd = new Date(); //获取当前时间
+    var dateDiff = dateEnd.getTime() - dateBegin.getTime(); //时间差的毫秒数
+    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000)); //计算出相差天数
+    var leave1 = dateDiff % (24 * 3600 * 1000) //计算天数后剩余的毫秒数
+    var hours = Math.floor(leave1 / (3600 * 1000)) //计算出小时数
+    //计算相差分钟数
+    var leave2 = leave1 % (3600 * 1000) //计算小时数后剩余的毫秒数
+    var minutes = Math.floor(leave2 / (60 * 1000)) //计算相差分钟数
+    //计算相差秒数
+    var leave3 = leave2 % (60 * 1000) //计算分钟数后剩余的毫秒数
+    var seconds = Math.round(leave3 / 1000);
+    var timesString = '';
+
+    if (dayDiff != 0) {
+      // timesString = dayDiff + '天之前';
+      timesString = self.substringDate(timesData)
+    } else if (dayDiff == 0 && hours != 0) {
+      timesString = hours + '小时之前';
+    } else if (dayDiff == 0 && hours == 0) {
+      timesString = minutes + '分钟之前';
+      if (minutes == 0) {
+        timesString = '刚刚';
+      }
+    }
+    return timesString
   }
 };
