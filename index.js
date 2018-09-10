@@ -6,6 +6,7 @@ import toFinancialNum from './dist/toFinancialNum'
 import autoTextarea from './dist/autoTextarea'
 import keyMatcher from './dist/keyMatcher'
 import https from './dist/https'
+import detectType from './dist/detectType'
 
 export {
 	time,
@@ -15,5 +16,5 @@ export {
 	toFinancialNum,
 	autoTextarea,
 	keyMatcher,
-	https,
+	detectType,
 };

@@ -157,27 +157,24 @@ url.getQueryString('date');
 
 ```
 
-##### 表单校验
+##### 表单校验 `validator`
+> 使用方法: 将 `rule` 替换为方法名, `param` 替换为需要进行验证的参数
 ```
-validator
-  /**
-    * 表单验证规则：
-    * 1. 在js中调用 validator.rule(param)
-    *      将rule替换为方法名,param为需要进行验证的参数
-    *
-    * 2. 运算完后返回布尔值，true为通过，false为不通过
-    *
-    * 3. 方法名                 与         对应的验证规则如下：
-    *      intNum              -----     整数
-    *      priceNum            -----     至多两位小数数字（多用于价格和金额）
-    *      phone               -----     手机号
-    *      email               -----     电子邮箱
-    *      confirmPassword     -----     确认密码
-    *      amount              -----     金融数字
-    *      dateTime            -----     日期时间
-    *
-    *  **/
+validator[rule](param); // true 通过, false 不通过
 ```
+> 规则 (`rule`) 枚举
+
+| 方法名 | 验证规则 |
+| ---- | ---- |
+| `intNum` | 整数 |
+| `priceNum` | 至多两位小数数字（多用于价格和金额）|
+| `phone` | 手机号 |
+| `email` | 电子邮箱 |
+| `confirmPassword` | 确认密码 |
+| `amount` | 金融数字 |
+| `dateTime` | 日期时间 |
+| `idCard` | 身份证号 |
+
 ##### 金额格式化
 ```
 toFinancialNum
@@ -233,3 +230,25 @@ https
     * 备注: 直接then的res为请求响应对象, 后续then需用户自行return res
     * */
 ```
+
+##### 检测精准的JS数据类型 `detectType`
+> 主要用法:
+```
+const targetValue = '待检测的值';
+const targetObj = {
+  a: 'aa',
+  b: 1
+};
+
+detectType(targetValue); // 'string', 返回类型值
+detectType(targetObj) === 'object'; // true, 判断类型值
+```
+> 返回值type枚举 (type为字符串类型, 可判断):
+
+| ***类型*** | 对象 | 字符串 | 数组 | 数字 | 函数 | 布尔值 | 日期 | 正则 | set | map | undefined | null | 非数字 | 标识符 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| ***返回值*** | object | string | array | number | function | boolean | date | regExp | set | map | undefined | null | NaN | symbol |
+
+> 备注: 内部使用了 `Object.prototype.toString()` 方法, 可检测除 `NaN` 以外的数据类型;
+>
+> `NaN` 是在 `[object Number]` 类型中再次判断 `Number.isNaN()` 来检测.
