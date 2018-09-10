@@ -233,6 +233,7 @@ https
 
 ##### 检测精准的JS数据类型 `detectType`
 > 主要用法:
+
 ```
 const targetValue = '待检测的值';
 const targetObj = {
@@ -243,6 +244,7 @@ const targetObj = {
 detectType(targetValue); // 'string', 返回类型值
 detectType(targetObj) === 'object'; // true, 判断类型值
 ```
+
 > 返回值type枚举 (type为字符串类型, 可判断):
 
 | ***类型*** | 对象 | 字符串 | 数组 | 数字 | 函数 | 布尔值 | 日期 | 正则 | set | map | undefined | null | 非数字 | 标识符 |
