@@ -7,6 +7,7 @@ import autoTextarea from './dist/autoTextarea'
 import keyMatcher from './dist/keyMatcher'
 import https from './dist/https'
 import detectType from './dist/detectType'
+import money from './dist/money'
 
 export {
 	time,
@@ -17,4 +18,5 @@ export {
 	autoTextarea,
 	keyMatcher,
 	detectType,
+	money,
 };
