@@ -17,6 +17,7 @@ export {
 	toFinancialNum,
 	autoTextarea,
 	keyMatcher,
+	https,
 	detectType,
 	money,
 };
