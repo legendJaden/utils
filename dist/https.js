@@ -41,7 +41,7 @@ var Https = function () {
 			var method = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'post';
 
 			// 格式化请求数据
-			var data = JSON.stringify(trim(param)); // 消除对象所有属性的空格
+			var data = trim(param); // 消除对象所有属性的空格
 			var axiosConfig = _extends({
 				url: url, // 请求链接
 				method: method, // 方法, 默认post
