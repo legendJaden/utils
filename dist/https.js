@@ -31,7 +31,7 @@ var Https = function () {
 		_classCallCheck(this, Https);
 
 		this.request = this.request.bind(this);
-		// return (url, param, configs) => {return this.request(url, param, configs, 'post')}
+		Object.assign(this, _axios2.default); // 保留所有axios的属性
 	}
 
 	_createClass(Https, [{
@@ -80,7 +80,7 @@ exports.default = https;
  * https.get(url, param, configs).then(res => {}).catch(err => {})
  *
  * @param {String} url 请求地址
- * @param {Object} param 请求参数, 直接使用对象即可, 封装方法已帮助JSON.stringify
+ * @param {Object} param 请求参数, 直接使用对象即可
  * @param {Object} configs 额外配置, 支持axios的所有配置项, 详见axios文档: https://github.com/axios/axios/blob/master/README.md#request-config
  * @return {Promise} 返回Promise链, 用户需自行.then(res => {}).catch(err => {})
  *
