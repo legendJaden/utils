@@ -31,7 +31,8 @@ var Https = function () {
 		_classCallCheck(this, Https);
 
 		this.request = this.request.bind(this);
-		Object.assign(this, _axios2.default); // 保留所有axios的属性
+		this.post = this.post.bind(this); // 如果不bind，后面合并axios其他方法时导致 post 丢失不生效
+		this.get = this.get.bind(this);
 	}
 
 	_createClass(Https, [{
@@ -70,7 +71,7 @@ var Https = function () {
 	return Https;
 }();
 
-var https = new Https();
+var https = _extends({}, _axios2.default, new Https()); // 保留axios其他属性
 
 exports.default = https;
 
@@ -83,6 +84,8 @@ exports.default = https;
  * @param {Object} param 请求参数, 直接使用对象即可
  * @param {Object} configs 额外配置, 支持axios的所有配置项, 详见axios文档: https://github.com/axios/axios/blob/master/README.md#request-config
  * @return {Promise} 返回Promise链, 用户需自行.then(res => {}).catch(err => {})
+ *
+ * 此外，还保留axios所有其他属性，例如interceptor拦截器，用法同axios
  *
  * 备注: 直接then的res为请求响应对象, 后续then需用户自行return res
  * */

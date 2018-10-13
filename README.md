@@ -214,22 +214,24 @@ keyMatcher
     * */
 ```
 
-##### axios基础配置
+##### axios基础配置 `https`
+> 主要用法:
+
 ```
-https
-  /**
-    * 主要用法:
-    * https.post(url, param, configs).then(res => {}).catch(err => {})
-    * https.get(url, param, configs).then(res => {}).catch(err => {})
-    *
-    * @param {String} url 请求地址
-    * @param {Object} param 请求参数, 直接使用对象即可
-    * @param {Object} configs 额外配置, 支持axios的所有配置项, 详见axios文档: https://github.com/axios/axios/blob/master/README.md#request-config
-    * @return {Promise} 返回Promise链, 用户需自行.then(res => {}).catch(err => {})
-    *
-    * 备注: 直接then的res为请求响应对象, 后续then需用户自行return res
-    * */
+https.post(url, param, configs).then(res => {}).catch(err => {})
+https.get(url, param, configs).then(res => {}).catch(err => {})
+
+/**
+ * @param {String} url 请求地址
+ * @param {Object} param 请求参数, 直接使用对象即可
+ * @param {Object} configs 额外配置, 支持axios的所有配置项, 详见axios文档: https://github.com/axios/axios/blob/master/README.md#request-config
+ * @return {Promise} 返回Promise链, 用户需自行.then(res => {}).catch(err => {})
+ *
+ * */
 ```
+> 备注: 直接then的res为请求响应对象, 后续then需用户自行return res
+>
+> 此外，还保留axios所有其他属性，例如interceptor拦截器，用法同axios
 
 ##### 检测精准的JS数据类型 `detectType`
 > 主要用法:
