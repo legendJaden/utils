@@ -37,7 +37,8 @@ var Https = function () {
 
 	_createClass(Https, [{
 		key: 'request',
-		value: function request(url, param) {
+		value: function request(url) {
+			var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 			var configs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 			var method = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'post';
 
