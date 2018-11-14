@@ -42,13 +42,13 @@ exports.default = {
     }
     if (parseInt(IntegerNum, 10) > 0) {
       //获取整型部分转换
-      zeroCount = 0;
-      IntLen = IntegerNum.length;
-      for (i = 0; i < IntLen; i++) {
-        n = IntegerNum.substr(i, 1);
-        p = IntLen - i - 1;
-        q = p / 4;
-        m = p % 4;
+      var zeroCount = 0;
+      var IntLen = IntegerNum.length;
+      for (var i = 0; i < IntLen; i++) {
+        var n = IntegerNum.substr(i, 1);
+        var p = IntLen - i - 1;
+        var q = p / 4;
+        var m = p % 4;
         if (n == "0") {
           zeroCount++;
         } else {
@@ -67,9 +67,9 @@ exports.default = {
     }
     if (DecimalNum != '') {
       //小数部分
-      decLen = DecimalNum.length;
-      for (i = 0; i < decLen; i++) {
-        n = DecimalNum.substr(i, 1);
+      var decLen = DecimalNum.length;
+      for (var i = 0; i < decLen; i++) {
+        var n = DecimalNum.substr(i, 1);
         if (n != '0') {
           ChineseStr += cnNums[Number(n)] + cnDecUnits[i];
         }
