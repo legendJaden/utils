@@ -60,6 +60,7 @@ exports.default = {
         }
         if (m == 0 && zeroCount < 4) {
           ChineseStr += cnIntUnits[q];
+          zeroCount = 0; // 归零
         }
       }
       ChineseStr += cnIntLast;
