@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "pdfjs-dist": "^2.0.943",
     "user": "0.0.0"
   },
   "devDependencies": {

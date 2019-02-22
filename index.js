@@ -8,6 +8,7 @@ import keyMatcher from './dist/keyMatcher'
 import https from './dist/https'
 import detectType from './dist/detectType'
 import money from './dist/money'
+import PDF from 'pdfjs-dist'
 
 export {
 	time,
@@ -20,4 +21,5 @@ export {
 	https,
 	detectType,
 	money,
+	PDF, // 修改第三方 PDFjs 代码后输出
 };
