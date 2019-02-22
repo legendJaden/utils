@@ -185,6 +185,12 @@ toFinancialNum
    * @param  {String} symbol = '￥' 格式化符号, 默认为人民币
    * @return {String} financialNum 格式化后金额 16937.6588 => ￥16,937.66
    */
+smalltoBIG
+  /**
+   * 将小写金额转成大写
+   * @param  {String | Number} num 待格式化数字
+   * @return {String} smalltoBIG 格式化后金额 10.04 => 壹拾元肆分
+   */
 ```
 
 ##### 自动文本框
