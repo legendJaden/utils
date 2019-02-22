@@ -256,3 +256,9 @@ detectType(targetObj) === 'object'; // true, 判断类型值
 > 备注: 内部使用了 `Object.prototype.toString()` 方法, 可检测除 `NaN` 以外的数据类型;
 >
 > `NaN` 是在 `[object Number]` 类型中再次判断 `Number.isNaN()` 来检测.
+
+##### PDF.js
+> 主要用法:
+> 直接引入库, 本方法仅仅修改源码使之避免签章被隐藏, 与原库用法一致 [PDF.js](https://mozilla.github.io/pdf.js/api/draft/index.html) 
+> 修改源码位置: pdfjs-dist/build/pdf.worker.js :23179 注释掉 _this2.setFlags(_util.AnnotationFlag.HIDDEN);
+
